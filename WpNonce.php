@@ -6,7 +6,7 @@ namespace Alexlg89\WpNonce;
  * Wrapper Class for Wordpress wp_nonce* functions
  *
  * Class WpNonce
- * @package Alexlg89\WPnonce
+ * @package Alexlg89\WpNonce
  * @version 0.0.1
  */
 class WpNonce
