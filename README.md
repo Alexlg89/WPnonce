@@ -92,9 +92,9 @@ $retval = WpNonce::check_ajax_referer($action, $queryArg, false);
 ### Verify a nonce with a specific action
 
 ```php
+$nonce = 'an2bf72h';
 $action = 'add-customer';
-$name = '_myNonce';
-$retval = WpNonce::verify($name, $action);
+$retval = WpNonce::verify($nonce, $action);
 ```
 
 ### Default nonce
