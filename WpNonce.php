@@ -50,15 +50,18 @@ class WpNonce
      * @see  https://codex.wordpress.org/Function_Reference/wp_nonce_field
      *
      * @param $action
-     * @return bool|string
+     * @param string $customNonce
+     * @param bool $referer
+     * @param bool $echo
+     * @return bool
      */
-    public static function field($action)
+    public static function field($action, $customNonce = self::DEFAULT_NONCE, $referer = true, $echo = true)
     {
         if (!function_exists('wp_nonce_field')) {
             return false;
         }
 
-        return wp_nonce_field($action);
+        return wp_nonce_field($action, $customNonce, $referer, $echo);
     }
 
     /**
@@ -116,7 +119,7 @@ class WpNonce
     }
 
     /**
-     * Verifies the nonce.
+     * Verifies the nonce with a specific action.
      *
      * @see  https://codex.wordpress.org/Function_Reference/wp_verify_nonce
      *
