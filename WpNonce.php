@@ -1,6 +1,6 @@
 <?php
 
-namespace Alexlg89\WPnonce;
+namespace Alexlg89\WpNonce;
 
 /**
  * Wrapper Class for Wordpress wp_nonce* functions
