@@ -1,7 +1,7 @@
 # WpNonce
 WpNonce is a static wrapper class for Wordpress wp_nonce* functions.
 
-##Install
+## Install
 
 ```
 composer require alexlg89/wpnonce
@@ -14,9 +14,9 @@ Or just add
 ```
 to your `compsoer.json` file and run a compposer update.
 
-##Usage:
+## Usage:
 
-###Create an URL with a nonce parameter
+### Create an URL with a nonce parameter
 ```php
 $url = 'http://mysite.com/custommers';
 $action = 'add-customer';
@@ -30,7 +30,7 @@ Or just use the default name by skipping the last parameter.
 $nonceUrl = WpNonce::url($url, $action);
 ```
 
-###Create a nonce field with a specific action
+### Create a nonce field with a specific action
 ```php
 $action = 'add-customer';
 WpNonce::field($action);
@@ -56,14 +56,14 @@ You can let the field function return the html as string, if  you set the fourth
 $html = WpNonce::field($action, $referer, true, false);
 ```
 
-###Create a nonce with a specific action
+### Create a nonce with a specific action
 
 ```php
 $action = 'add-customer';
 $nonce = WpNonce::create($action);
 ```
 
-###Check an URL for a vaild nonce
+### Check an URL for a vaild nonce
 ```php
 $action = 'add-customer';
 $name = '_myNonce';
@@ -76,7 +76,7 @@ Or just use the default name by skipping the last parameter.
 $retval = WpNonce::checkAdminReferer($action);
 ```
 
-###Check an AJAX URL for a vaild nonce
+### Check an AJAX URL for a vaild nonce
 ```php
 $action = 'add-customer';
 $queryArg = '_myNonce';
@@ -89,7 +89,7 @@ If the third parameter is set to false, the script won't die, if the nonce is in
 $retval = WpNonce::check_ajax_referer($action, $queryArg, false);
 ```
 
-###Verify a nonce with a specific action
+### Verify a nonce with a specific action
 
 ```php
 $action = 'add-customer';
@@ -97,7 +97,7 @@ $name = '_myNonce';
 $retval = WpNonce::verify($name, $action);
 ```
 
-###Default nonce
+### Default nonce
 
 ```php
 const DEFAULT_NONCE = '_wpnonce';
